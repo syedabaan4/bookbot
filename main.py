@@ -1,7 +1,13 @@
 from stats import *
+import sys
 
 def main():
-    path = "./books/frankenstein.txt"
+
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+ 
+    path = sys.argv[1]
     num = count_words(get_book_text(path))
     print("============ BOOKBOT =============")
     print(f"analyzing book found at {path}")
